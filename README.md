@@ -34,7 +34,3 @@ npm run dev
 ```
 
 Both `/` and `/embed` serve the globe widget. Use `/embed` for iframe embedding.
-
-## Powered by
-
-[Market Watching](https://t.me/market_watching)
