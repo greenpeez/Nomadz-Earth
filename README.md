@@ -34,3 +34,5 @@ npm run dev
 ```
 
 Both `/` and `/embed` serve the globe widget. Use `/embed` for iframe embedding.
+
+Live version at https://nomadz.xyz/events
