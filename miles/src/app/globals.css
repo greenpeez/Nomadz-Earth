@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --bg: #f5f4f0;
+  --bg-panel: rgba(245, 244, 240, 0.96);
+  --bg-panel-solid: #f0efe9;
+  --bg-input: rgba(0, 0, 0, 0.05);
+  --text: #0d0d0d;
+  --text-dim: rgba(13, 13, 13, 0.6);
+  --text-muted: rgba(13, 13, 13, 0.35);
+  --border: rgba(0, 0, 0, 0.1);
+  --border-strong: rgba(0, 0, 0, 0.18);
+  --accent: #1a6b8a;
+  --accent-2: #1a8a6b;
+  --accent-glow: rgba(26, 107, 138, 0.25);
+  --red: #c0392b;
+  --shadow: 0 4px 24px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.18);
+  --scrollbar-thumb: rgba(0,0,0,0.2);
+  --globe-glow: #1a6b8a;
+}
+
+.dark {
+  --bg: #080A0C;
+  --bg-panel: rgba(10, 12, 14, 0.97);
+  --bg-panel-solid: #0e1114;
+  --bg-input: rgba(255, 255, 255, 0.05);
+  --text: #ffffff;
+  --text-dim: rgba(255, 255, 255, 0.6);
+  --text-muted: rgba(255, 255, 255, 0.35);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --accent: #50D8D8;
+  --accent-2: #50B1D8;
+  --accent-glow: rgba(80, 216, 216, 0.2);
+  --red: #FF6B6B;
+  --shadow: 0 4px 24px rgba(0,0,0,0.5);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.7);
+  --scrollbar-thumb: rgba(255,255,255,0.2);
+  --globe-glow: #50D8D8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+@keyframes miles-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.4); }
+}
+@keyframes miles-ring-pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+@keyframes miles-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes miles-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes miles-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes miles-slide-in {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.miles-pulse { animation: miles-pulse 1.5s ease-in-out infinite; }
+.miles-ring-pulse { animation: miles-ring-pulse 2s ease-in-out infinite; }
+.miles-fade-in { animation: miles-fade-in 0.4s ease-out forwards; }
+.miles-slide-in { animation: miles-slide-in 0.35s ease-out forwards; }
+
+.miles-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+.miles-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+input[type="text"], input[type="search"] {
+  outline: none;
+}
+button {
+  font-family: inherit;
+}
